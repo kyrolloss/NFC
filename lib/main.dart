@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:nfc/Features/MainLayout/Presentation/Main%20Layout%20View.dart';
+import 'package:nfc/Features/MainLayout/Presentation/View/Share%20View/Share%20View.dart';
 
 import 'Features/MainLayout/Presentation/View/Contacts View/Contacts View.dart';
 import 'Features/MainLayout/Presentation/View/Home View/Home View.dart';
@@ -14,10 +16,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return  MaterialApp(
       theme:  ThemeData(
-        scaffoldBackgroundColor: const Color(0xffF5F5F5),
+        scaffoldBackgroundColor: const Color(0xffF5F5F1),
       ),
       debugShowCheckedModeBanner: false,
-      home: const ContactsView(),
+      home: const MainLayout(),
     );
   }
 }
