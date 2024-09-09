@@ -49,6 +49,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.8"
+  custom_sliding_segmented_control:
+    dependency: "direct main"
+    description:
+      name: custom_sliding_segmented_control
+      sha256: "53c3e931c3ae1f696085d1ec70ac8e934da836595a9b7d9b88fdd0fcbf2a5574"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.8.3"
   fake_async:
     dependency: transitive
     description:
@@ -83,22 +91,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  fw_tab_bar:
-    dependency: "direct main"
-    description:
-      name: fw_tab_bar
-      sha256: fe575540c7968d88b6ee7fda9a7806c30074bb928f021b0facc6b6cac46d82c3
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.3"
-  get:
-    dependency: transitive
-    description:
-      name: get
-      sha256: e4e7335ede17452b391ed3b2ede016545706c01a02292a6c97619705e7d2a85e
-      url: "https://pub.dev"
-    source: hosted
-    version: "4.6.6"
   leak_tracker:
     dependency: transitive
     description:
@@ -168,6 +160,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
+  slide_switcher:
+    dependency: "direct main"
+    description:
+      name: slide_switcher
+      sha256: "5fda4741919814b33971d12392f24edc92c5b39b8656367b38a19d4c578be4f4"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.2"
   source_span:
     dependency: transitive
     description:
