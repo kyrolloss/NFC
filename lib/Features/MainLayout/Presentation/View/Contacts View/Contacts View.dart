@@ -25,7 +25,6 @@ class _ContactsViewState extends State<ContactsView>with TickerProviderStateMixi
     customSegmentController = CustomSegmentedController<int>();
     customSegmentController.value = 1;
 
-    // مزامنة الـ TabController مع customSegmentController
     tabController.addListener(() {
       if (tabController.indexIsChanging) {
         customSegmentController.value = tabController.index + 1;
@@ -95,9 +94,9 @@ class _ContactsViewState extends State<ContactsView>with TickerProviderStateMixi
           Expanded(
               child: TabBarView(
                 controller: tabController,
-                  children: [
-            const ContactsScreen(),
-            const GroupScreen(),
+                  children: const [
+            ContactsScreen(),
+            GroupScreen(),
           ]))
         ],
       ),
