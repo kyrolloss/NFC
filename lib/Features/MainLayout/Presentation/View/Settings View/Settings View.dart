@@ -75,6 +75,25 @@ class SettingsView extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(
+                height: height * .02
+              ),
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20.0 ),
+                    child: Text(
+                      'App Settings',
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                        fontSize: width * .04,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black54,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
               const SettingsComponents(),
               Row(
                 children: [
