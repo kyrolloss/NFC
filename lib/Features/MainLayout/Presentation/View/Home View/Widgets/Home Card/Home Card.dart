@@ -44,9 +44,9 @@ class _HomeCardState extends State<HomeCard> {
                           children: [
                             CircleAvatar(
                               backgroundColor: Colors.black,
-                              radius: width * .08,
+                              radius: width * .09,
                               child: Text(
-                                'tap.',
+                                'Skip Z',
                                 style: TextStyle(
                                     color: Colors.white, fontSize: width * .05),
                               ),

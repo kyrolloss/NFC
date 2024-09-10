@@ -20,7 +20,7 @@ class AnalyticalRow extends StatelessWidget {
             backgroundColor: Colors.black,
             radius: width * .06,
             child: Text(
-              'tap.',
+              'Skip Z',
               style: TextStyle(color: Colors.white, fontSize: width * .04),
             ),
           ),

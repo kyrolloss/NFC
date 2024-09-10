@@ -36,7 +36,7 @@ class ShareCard extends StatelessWidget {
                                   backgroundColor: Colors.black,
                                   radius: width * .08,
                                   child: Text(
-                                    'tap.',
+                                    'Skip Z',
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: width * .05),
@@ -118,7 +118,7 @@ class ShareCard extends StatelessWidget {
                             ),
                             child: Center(
                               child: Text(
-                                'tap.',
+                                'Skip Z',
                                 style: TextStyle(
                                     color: Colors.white, fontSize: width * .065 , fontWeight: FontWeight.bold),
                               ),

@@ -17,7 +17,7 @@ class ContactsScreen extends StatelessWidget {
 
           SizedBox(
             height: height * .275,
-            width: width * .725,
+            width: width ,
             child: const Image(
               image:
                   AssetImage('assets/images/no-data-concept-illustration.png'),

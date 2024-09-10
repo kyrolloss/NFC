@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:nfc/Features/MainLayout/Presentation/View/Analytics%20View/Analytics%20View.dart';
 import 'package:nfc/Features/MainLayout/Presentation/View/Contacts%20View/Contacts%20View.dart';
 import 'package:nfc/Features/MainLayout/Presentation/View/Home%20View/Home%20View.dart';
+import 'package:nfc/Features/MainLayout/Presentation/View/Settings%20View/Settings%20View.dart';
 import 'package:nfc/Features/MainLayout/Presentation/View/Share%20View/Share%20View.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
@@ -15,10 +17,12 @@ class _MainLayoutState extends State<MainLayout> {
   late PersistentTabController _controller;
 
   List<Widget> _buildScreens() {
-    return [
-      const HomeView(),
-      const ContactsView(),
-      const ShareView(),
+    return const [
+      HomeView(),
+      ContactsView(),
+      ShareView(),
+      AnalyticsView(),
+      SettingsView()
     ];
   }
 
@@ -78,36 +82,45 @@ class _MainLayoutState extends State<MainLayout> {
 
 
       ),
-      // PersistentBottomNavBarItem(
-      //   icon: SizedBox(
-      //     height: 30,
-      //     width: 30,
-      //     child: Image.asset('assets/images/analytics.png'),
-      //   ),
-      //   inactiveIcon: SizedBox(
-      //     height: 30,
-      //     width: 30,
-      //     child: Image.asset('assets/images/analytics grey.png'),
-      //   ),
-      //   title: ("Analytics"),
-      //
-      //
-      // ),
-      // PersistentBottomNavBarItem(
-      //   icon: SizedBox(
-      //     height: 30,
-      //     width: 30,
-      //     child: Image.asset('assets/images/setting.png'),
-      //   ),
-      //   inactiveIcon: SizedBox(
-      //     height: 30,
-      //     width: 30,
-      //     child: Image.asset('assets/images/setting grey.png'),
-      //   ),
-      //   title: ("Settings"),
-      //
-      //
-      // ),
+      PersistentBottomNavBarItem(
+        activeColorPrimary: Colors.black,
+        inactiveColorPrimary: Colors.grey,
+        icon: SizedBox(
+          height: 30,
+          width: 30,
+          child: Image.asset('assets/images/analytics.png' , fit: BoxFit.fill,),
+        ),
+        inactiveIcon: SizedBox(
+          height: 30,
+          width: 30,
+          child: Image.asset('assets/images/analytics grey.png'),
+        ),
+        title: ("Analytics"),
+
+
+
+
+      ),
+      PersistentBottomNavBarItem(
+        activeColorPrimary: Colors.black,
+        inactiveColorPrimary: Colors.grey,
+        icon: SizedBox(
+          height: 30,
+          width: 30,
+          child: Image.asset('assets/images/setting.png' , fit: BoxFit.fill,),
+        ),
+        inactiveIcon: SizedBox(
+          height: 30,
+          width: 30,
+          child: Image.asset('assets/images/setting grey.png'),
+        ),
+        title: ("Setting"),
+
+
+
+
+      ),
+
     ];
   }
 
