@@ -59,7 +59,6 @@ class SettingsView extends StatelessWidget {
                 width: width * .8,
                 child: ElevatedButton.icon(
                   onPressed: () {
-                    // Subscribe action here
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.black,

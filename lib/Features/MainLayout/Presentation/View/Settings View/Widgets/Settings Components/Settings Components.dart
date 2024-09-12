@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nfc/Features/MainLayout/Presentation/View/Settings%20View/%20My%20Profile%20Tap/My%20Profile%20Tap.dart';
 import 'package:nfc/Features/MainLayout/Presentation/View/Settings%20View/%20My%20Profile%20Tap/widget/ProfileCard.dart';
 import 'package:nfc/Features/MainLayout/Presentation/View/Settings%20View/Account%20Information/Account%20Information.dart';
+import 'package:nfc/Features/MainLayout/Presentation/View/Settings%20View/My%20Products%20Tap/My%20Products%20Tap.dart';
 import 'package:nfc/Features/MainLayout/Presentation/View/Share%20View/Widgets/Share%20Components/widget/custom%20List%20Item.dart';
 
 class SettingsComponents extends StatelessWidget {
@@ -55,7 +56,11 @@ class SettingsComponents extends StatelessWidget {
               trailing: const Icon(Icons.chevron_right, color: Colors.grey),
             ),
             const Divider(),
-            const CustomListItem(
+             CustomListItem(
+              onTap: (){
+
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const MyProductsTap()));
+              },
               icon: Icons.credit_card_sharp,
               text: 'My Products',
               trailing: Icon(Icons.chevron_right, color: Colors.grey),
