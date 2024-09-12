@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: const Color(0xffF5F5F1),
       ),
       debugShowCheckedModeBanner: false,
-      home:  const MyProfileTap(),
+      home:  const SettingsView(),
     );
   }
 }
