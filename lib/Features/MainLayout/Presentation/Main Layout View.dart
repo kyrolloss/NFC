@@ -4,7 +4,6 @@ import 'package:nfc/Features/MainLayout/Presentation/View/Contacts%20View/Contac
 import 'package:nfc/Features/MainLayout/Presentation/View/Home%20View/Home%20View.dart';
 import 'package:nfc/Features/MainLayout/Presentation/View/Settings%20View/Settings%20View.dart';
 import 'package:nfc/Features/MainLayout/Presentation/View/Share%20View/Share%20View.dart';
-import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
 class MainLayout extends StatefulWidget {
   const MainLayout({super.key});
@@ -14,146 +13,101 @@ class MainLayout extends StatefulWidget {
 }
 
 class _MainLayoutState extends State<MainLayout> {
-  late PersistentTabController _controller;
+  final List<Widget> _buildScreens = const [
+    HomeView(),
+    ContactsView(),
+    ShareView(),
+    AnalyticsView(),
+    SettingsView()
+  ];
 
-  List<Widget> _buildScreens() {
-    return const [
-      HomeView(),
-      ContactsView(),
-      ShareView(),
-      AnalyticsView(),
-      SettingsView()
-    ];
-  }
+  int _selectedIndex = 0;
 
-  List<PersistentBottomNavBarItem> _navBarsItems() {
-    return [
-      PersistentBottomNavBarItem(
-        activeColorPrimary: Colors.black,
-        inactiveColorPrimary: Colors.grey,
-        icon: SizedBox(
-          height: 30,
-          width: 30,
-          child: Image.asset('assets/images/profiles.png' , fit: BoxFit.fill,),
-        ),
-        inactiveIcon: SizedBox(
-          height: 30,
-          width: 30,
-          child: Image.asset('assets/images/profile grey.png'),
-        ),
-        title: ("Profiles"),
-
-
-
-
-      ),
-      PersistentBottomNavBarItem(
-        activeColorPrimary: Colors.black,
-        inactiveColorPrimary: Colors.grey,
-
-        icon: SizedBox(
-          height: 30,
-          width: 30,
-          child: Image.asset('assets/images/contacts.png'),
-        ),
-        inactiveIcon: SizedBox(
-          height: 30,
-          width: 30,
-          child: Image.asset('assets/images/contacts grey.png'),
-        ),
-        title: ("Contacts"),
-
-
-      ),
-      PersistentBottomNavBarItem(
-        activeColorPrimary: Colors.black,
-        inactiveColorPrimary: Colors.grey,
-        icon: SizedBox(
-          height: 30,
-          width: 30,
-          child: Image.asset('assets/images/qr-code.png'),
-        ),
-        inactiveIcon: SizedBox(
-          height: 30,
-          width: 30,
-          child: Image.asset('assets/images/qr-code grey.png'),
-        ),
-        title: ("Profiles"),
-
-
-      ),
-      PersistentBottomNavBarItem(
-        activeColorPrimary: Colors.black,
-        inactiveColorPrimary: Colors.grey,
-        icon: SizedBox(
-          height: 30,
-          width: 30,
-          child: Image.asset('assets/images/analytics.png' , fit: BoxFit.fill,),
-        ),
-        inactiveIcon: SizedBox(
-          height: 30,
-          width: 30,
-          child: Image.asset('assets/images/analytics grey.png'),
-        ),
-        title: ("Analytics"),
-
-
-
-
-      ),
-      PersistentBottomNavBarItem(
-        activeColorPrimary: Colors.black,
-        inactiveColorPrimary: Colors.grey,
-        icon: SizedBox(
-          height: 30,
-          width: 30,
-          child: Image.asset('assets/images/setting.png' , fit: BoxFit.fill,),
-        ),
-        inactiveIcon: SizedBox(
-          height: 30,
-          width: 30,
-          child: Image.asset('assets/images/setting grey.png'),
-        ),
-        title: ("Setting"),
-
-
-
-
-      ),
-
-    ];
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
   }
 
   @override
   void initState() {
     super.initState();
-    _controller = PersistentTabController(initialIndex: 0);
   }
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      backgroundColor: const Color(0xffF5F5F5),
-      bottomNavigationBar: PersistentTabView(
-        context,
-        controller: _controller,
-        screens: _buildScreens(),
-        items: _navBarsItems(),
+      body: _buildScreens[_selectedIndex],
+      bottomNavigationBar: BottomNavigationBar(
+
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
+        unselectedItemColor: Colors.black26,
+        selectedLabelStyle: TextStyle(
+          color: Colors.black,
+          fontSize: width * .035,
+          fontWeight: FontWeight.w400,
+        ),
+        unselectedLabelStyle: TextStyle(
+          color: Colors.black,
+          fontSize: width * .035,
+          fontWeight: FontWeight.w400,
+        ),
+        fixedColor: Colors.black,
         backgroundColor: Colors.white,
-        handleAndroidBackButtonPress: true,
-        resizeToAvoidBottomInset: true,
-        stateManagement: true,
-        navBarStyle:  NavBarStyle.style6,
-        padding:  const EdgeInsets.all(12.0),
-        navBarHeight: height*.09,
-        decoration: NavBarDecoration(
-          borderRadius: BorderRadius.circular(10.0),
-          colorBehindNavBar: Colors.white,
-        ),)
-
-
+        items: [
+          BottomNavigationBarItem(
+            backgroundColor: Colors.white,
+            icon: _selectedIndex == 0
+                ? Image.asset('assets/images/profiles.png',
+                    width: 24, height: 24)
+                : Image.asset('assets/images/profile grey.png',
+                    width: 24, height: 24),
+            label: 'Profiles',
+          ),
+          BottomNavigationBarItem(
+            backgroundColor: Colors.white,
+            icon: _selectedIndex == 1
+                ? Image.asset('assets/images/contacts.png',
+                    width: 24, height: 24)
+                : Image.asset('assets/images/contacts grey.png',
+                    width: 24, height: 24),
+            label: 'Contacts',
+          ),
+          BottomNavigationBarItem(
+            backgroundColor: Colors.white,
+            icon: _selectedIndex == 2
+                ? Image.asset('assets/images/qr-code.png',
+                    width: 24, height: 24)
+                : Image.asset('assets/images/qr-code grey.png',
+                    width: 24, height: 24),
+            label: 'Share',
+          ),
+          BottomNavigationBarItem(
+            backgroundColor: Colors.white,
+            icon: _selectedIndex == 3
+                ? Image.asset('assets/images/analytics.png',
+                    width: 24, height: 24)
+                : Image.asset('assets/images/analytics grey.png',
+                    width: 24, height: 24),
+            label: 'Analytics',
+          ),
+          BottomNavigationBarItem(
+            backgroundColor: Colors.white,
+            icon: _selectedIndex == 4
+                ? Image.asset('assets/images/setting.png',
+                    width: 24, height: 24)
+                : Image.asset('assets/images/setting grey.png',
+                    width: 24, height: 24),
+            label: 'Settings',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+      ),
     );
   }
 }

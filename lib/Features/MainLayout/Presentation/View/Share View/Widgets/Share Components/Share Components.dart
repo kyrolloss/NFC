@@ -13,7 +13,7 @@ class ShareComponents extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: Container(
-        height: height*.32,
+        height: height*.25,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(20),
@@ -21,46 +21,25 @@ class ShareComponents extends StatelessWidget {
         ),
         child: ListView(
           physics: const NeverScrollableScrollPhysics(),
-          children: [
-            const CustomListItem(
+          children: const [
+            CustomListItem(
               icon: Icons.edit_outlined,
               text: 'Customize',
               trailing: Icon(Icons.chevron_right, color: Colors.grey),
             ),
-            const Divider(),
-            const CustomListItem(
+            Divider(),
+            CustomListItem(
               icon: Icons.send_outlined,
               text: 'Share',
               trailing: Icon(Icons.chevron_right, color: Colors.grey),
             ),
-            const Divider(),
-            const CustomListItem(
+            Divider(),
+            CustomListItem(
               icon: Icons.home_outlined,
               text: 'Add to Home Screen',
               trailing: Icon(Icons.chevron_right, color: Colors.grey),
             ),
-            const Divider(),
-            CustomListItem(
-                icon: Icons.offline_share_outlined,
-                text: 'Offline Sharing',
-                trailing: SizedBox(
-                  width: width * .15,
-                  height: height * .04,
-                  child: FlutterSwitch(
-                      activeColor:  const Color(0xff916EEC),
-                      inactiveColor: Colors.grey.withOpacity(.2),
-                      width: width * .15,
-                      height: height * .04,
-                      valueFontSize: 12.0,
-                      toggleSize: 30.0,
-                      borderRadius: 30.0,
-                      padding: BorderSide.strokeAlignOutside,
 
-
-                      value: false,
-                      onToggle: (value) {}),
-                )
-            ),
 
           ],
         ),

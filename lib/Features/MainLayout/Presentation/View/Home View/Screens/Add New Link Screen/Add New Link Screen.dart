@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CategoryScreen extends StatefulWidget {
+  const CategoryScreen({super.key});
+
   @override
   _CategoryScreenState createState() => _CategoryScreenState();
 }
@@ -195,6 +197,7 @@ class _CategoryScreenState extends State<CategoryScreen>
       appBar: AppBar(
         backgroundColor: const Color(0xffF5F5F1),
         elevation: 0,
+        surfaceTintColor: Colors.transparent,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Navigator.of(context).pop(),
