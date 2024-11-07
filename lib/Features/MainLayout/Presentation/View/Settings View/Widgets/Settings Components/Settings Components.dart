@@ -63,7 +63,7 @@ class SettingsComponents extends StatelessWidget {
               },
               icon: Icons.credit_card_sharp,
               text: 'My Products',
-              trailing: Icon(Icons.chevron_right, color: Colors.grey),
+              trailing: const Icon(Icons.chevron_right, color: Colors.grey),
             ),
             const Divider(),
             const CustomListItem(

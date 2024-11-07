@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nfc/Features/MainLayout/Presentation/View/Share%20View/Widgets/Share%20Card.dart';
+import 'package:nfc/Features/MainLayout/Presentation/View/Share%20View/Widgets/Share%20Card/Share%20Card.dart';
 import 'package:nfc/Features/MainLayout/Presentation/View/Share%20View/Widgets/Share%20Components/Share%20Components.dart';
 
 class ShareView extends StatelessWidget {

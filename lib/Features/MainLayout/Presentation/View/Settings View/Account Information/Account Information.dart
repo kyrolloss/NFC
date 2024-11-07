@@ -100,12 +100,12 @@ class BottomSheetContent extends StatelessWidget {
                          width: width*.075,
                          height: height*.075,
 
-                         child: Image(image: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUC8w15QGL9EmviUrxaVf-uN3P0Q2XI90lng&s')),
+                         child: const Image(image: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUC8w15QGL9EmviUrxaVf-uN3P0Q2XI90lng&s')),
                        ),
                        SizedBox(
                          width: width*.02,
                        ),
-                       Text('+20',style: TextStyle(color: Colors.black54),),
+                       const Text('+20',style: TextStyle(color: Colors.black54),),
                      ],
                    ),
                  ),

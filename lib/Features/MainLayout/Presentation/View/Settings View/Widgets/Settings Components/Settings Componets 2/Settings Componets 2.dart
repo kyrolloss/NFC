@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
+import 'package:nfc/Features/MainLayout/Presentation/View/Settings%20View/How%20To%20Use%20Tap/How%20To%20Use%20Tap.dart';
 import 'package:nfc/Features/MainLayout/Presentation/View/Share%20View/Widgets/Share%20Components/widget/custom%20List%20Item.dart';
 
 class SettingsComponents2 extends StatelessWidget {
@@ -22,10 +23,13 @@ class SettingsComponents2 extends StatelessWidget {
         child: ListView(
           physics: const NeverScrollableScrollPhysics(),
           children:  [
-            const CustomListItem(
+             CustomListItem(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const HowToUseTap(),));
+              },
               icon: Icons.info_outline_rounded,
               text: 'How To Use Skip Z',
-              trailing: Icon(Icons.chevron_right, color: Colors.grey),
+              trailing: const Icon(Icons.chevron_right, color: Colors.grey),
             ),
             const Divider(),
             const CustomListItem(
