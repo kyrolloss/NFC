@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
+import 'package:nfc/Features/MainLayout/Presentation/View/Share%20View/Widgets/Add%20To%20Home%20Model/Add%20To%20Home%20Model.dart';
 import 'package:nfc/Features/MainLayout/Presentation/View/Share%20View/Widgets/Customize%20Model%20Sheet/Customize%20Model%20Sheet.dart';
 import 'package:nfc/Features/MainLayout/Presentation/View/Share%20View/Widgets/Share%20Components/widget/custom%20List%20Item.dart';
 
@@ -50,10 +51,26 @@ class ShareComponents extends StatelessWidget {
               trailing: Icon(Icons.chevron_right, color: Colors.grey),
             ),
             const Divider(),
-            const CustomListItem(
+             CustomListItem(
+              onTap: (){
+                showModalBottomSheet(
+                  backgroundColor: Colors.white,
+                  context: context,
+                  isScrollControlled: true,
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                  ),
+                  builder: (context) => Padding(
+                      padding: EdgeInsets.only(
+                          bottom: MediaQuery.of(context).viewInsets.bottom),
+                      child: const AddToHomeModelSheet()
+                  ),
+                );
+              },
+
               icon: Icons.home_outlined,
               text: 'Add to Home Screen',
-              trailing: Icon(Icons.chevron_right, color: Colors.grey),
+              trailing: const Icon(Icons.chevron_right, color: Colors.grey),
             ),
 
 
