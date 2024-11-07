@@ -43,7 +43,7 @@ class _AnalyticsViewState extends State<AnalyticsView>
 
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(12.0),
         child:
             Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           const AnalyticalRow(),
@@ -73,7 +73,7 @@ class _AnalyticsViewState extends State<AnalyticsView>
                 decoration: BoxDecoration(
                   color: index == tabIndex
                       ? Colors.black
-                      : Colors.grey.withOpacity(.5),
+                      : Colors.white,
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Center(

@@ -12,16 +12,16 @@ class AnalyticalRow extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
-          height: height * .03,
+          height: height * .05,
         ),
         Row(
             children: [
           CircleAvatar(
             backgroundColor: Colors.black,
-            radius: width * .06,
+            radius: width * .05,
             child: Text(
               'Skip Z',
-              style: TextStyle(color: Colors.white, fontSize: width * .04),
+              style: TextStyle(color: Colors.white, fontSize: width * .03),
             ),
           ),
           SizedBox(
